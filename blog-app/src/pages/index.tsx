@@ -13,13 +13,13 @@ export default function Home({ posts }: Props) {
       <div className="grid md:grid-cols-2 gap-6">
         {posts?.map((post) => (
           <div key={post.id} className="border rounded-lg p-4 shadow-md">
-            <h2 className="text-xl font-semibold mb-2">
-              <Link href={`/post/${post.id}`} className="text-blue-600 hover:underline">
+            <h2 className=" text-xl font-semibold mb-2">
+              <Link href={`/post/${post.id}`} className="cursor-pointer text-blue-600 hover:underline">
                 {post.title}
               </Link>
             </h2>
-            <p className="text-gray-700">{post.body.slice(0, 100)}...</p>
-            <Link href={`/post/${post.id}`} className="text-blue-500 font-medium mt-2 inline-block">
+            <p className=" text-gray-700">{post.body.slice(0, 100)}...</p>
+            <Link href={`/post/${post.id}`} className="cursor-pointer text-blue-500 font-medium mt-2 inline-block">
               Read More →
             </Link>
           </div>

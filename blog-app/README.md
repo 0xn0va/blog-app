@@ -1,40 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Blog App with Next.js and Tailwind CSS
 
-## Getting Started
+This is a simple blog application built with **Next.js**, **TypeScript**, and **Tailwind CSS**. The app fetches blog posts from the [JSONPlaceholder API](https://jsonplaceholder.typicode.com/posts) and displays them in a responsive grid layout. It includes a homepage that lists the posts, and a dynamic post details page that displays more information about each individual post.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### 1. Homepage (/)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Fetches a list of blog posts from the **JSONPlaceholder API** using `getStaticProps`.
+- Displays the posts in a responsive grid layout using **Tailwind CSS**.
+- Each blog post card includes:
+  - **Title**: A clickable link directing to the post's details page.
+  - **First 100 characters** of the body.
+  - A **"Read More"** link directing to the post details page.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### 2. Post Details Page (/post/[id])
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- Implements a dynamic route (`/post/[id]`).
+- Uses `getStaticPaths` and `getStaticProps` to statically generate pages for each post.
+- Displays the full post details, including:
+  - **Title** of the post.
+  - **Full body** of the post.
+  - **Post ID** and **author** (using the `userId` field from the post).
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+## Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Next.js
+- TypeScript
+- Tailwind CSS
+- JSONPlaceholder API for fetching data
 
-## Learn More
+## Project Setup
 
-To learn more about Next.js, take a look at the following resources:
+`npx create-next-app@latest blog-app --typescript` - Next.js version 15.1.6 with Pages Router
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+## Additional Enhancements
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+- Custom \_app.tsx file to manage the global layout and initialization of the app;
+- Custom \_document.tsx file to manage the document structure, including meta tags, language settings, and body class;
+- The global CSS file styles/globals.css for Tailwind CSS configuration;
+- Created a types.ts file to define the Post type.

@@ -36,7 +36,7 @@ export default function Home({ posts }: Props) {
         {filteredPosts.map((post) => (
           <div key={post.id} className="border rounded-lg p-4 shadow-md">
             <h2 className="text-xl font-semibold mb-2">
-              <Link href={`/post/${post.id}`} className="text-blue-600 hover:underline">
+              <Link href={`/post/${post.id}`} className="text-blue-600 hover:underline uppercase">
                 {post.title}
               </Link>
             </h2>

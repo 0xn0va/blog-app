@@ -1,4 +1,4 @@
-const HASHTAG_POOL = ["Decentralization", "Blockchain", "Cryptocurrencies", "NFTs", "Smart Contracts", "DeFi", "DAOs"]
+const HASHTAG_POOL = ["Decentralization", "Blockchain", "Cryptocurrencies", "NFTs", "Smart Contracts", "DeFi", "DAOs", "MEME Coins"]
 
 export const generateHashtags = () => {
   return Array.from(

@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { Post } from "@/types/types"
+import { MoveRight } from "lucide-react"
 
 type Props = {
   post: Post & { hashtags: string[] }
@@ -25,7 +26,7 @@ const PostCard = ({ post, onSelectHashtag }: Props) => {
       </div>
 
       <Link href={`/post/${post.id}`} className="text-blue-500 font-medium mt-2 inline-block">
-        Read More →
+        Read More <MoveRight className="inline-block ml-2" size={20} />
       </Link>
     </div>
   )

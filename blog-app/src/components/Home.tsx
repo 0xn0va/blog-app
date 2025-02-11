@@ -12,7 +12,9 @@ type Props = {
 const Home = ({ posts }: Props) => {
   const [selectedHashtags, setSelectedHashtags] = useState<string[]>(["All"])
 
-  const allHashtags = Array.from(new Set(["All", "Decentralization", "Blockchain", "Cryptocurrencies", "NFTs", "Smart Contracts", "DeFi", "DAOs"]))
+  const allHashtags = Array.from(
+    new Set(["All", "Decentralization", "Blockchain", "Cryptocurrencies", "NFTs", "Smart Contracts", "DeFi", "DAOs", "MEME Coins"])
+  )
 
   const toggleHashtag = (hashtag: string) => {
     setSelectedHashtags((prev) =>
@@ -26,12 +28,12 @@ const Home = ({ posts }: Props) => {
       : posts.filter((post) => post.hashtags.some((tag) => selectedHashtags.includes(tag)))
 
   return (
-    <main className="max-w-4xl mx-auto p-4">
+    <main className="max-w-7xl mx-auto p-4">
       <h1 className="text-3xl font-bold mb-6">Blog Posts</h1>
 
       <HashtagFilter hashtags={allHashtags} selectedHashtags={selectedHashtags} onSelectHashtag={toggleHashtag} />
 
-      <div className="grid md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-6">
         {filteredPosts.map((post) => (
           <PostCard key={post.id} post={post} onSelectHashtag={toggleHashtag} />
         ))}

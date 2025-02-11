@@ -6,16 +6,25 @@ type Props = {
 
 const HashtagFilter = ({ hashtags, selectedHashtags, onSelectHashtag }: Props) => {
   return (
-    <div className="mb-4 flex gap-2">
-      {hashtags.map((hashtag) => (
-        <button
-          key={hashtag}
-          className={`px-3 py-1 text-sm rounded-lg ${selectedHashtags.includes(hashtag) ? "bg-blue-600 text-white" : "bg-gray-200 text-gray-800"}`}
-          onClick={() => onSelectHashtag(hashtag)}
-        >
-          {hashtag}
-        </button>
-      ))}
+    <div className="mb-4 flex flex-wrap gap-2 justify-between sm:justify-evenly px-4">
+      {hashtags.map((hashtag) => {
+        const isSelected = selectedHashtags.includes(hashtag)
+        return (
+          <button
+            key={hashtag}
+            className={`px-4 py-2 text-sm sm:text-base md:text-lg lg:text-xl font-medium rounded-md transition-all
+              ${
+                isSelected
+                  ? "text-blue-600 border-b-2 border-blue-600"
+                  : "text-gray-700 hover:text-emerald-600 hover:border-b-2 hover:border-emerald-600 border-0"
+              }
+              focus:outline-none`}
+            onClick={() => onSelectHashtag(hashtag)}
+          >
+            {hashtag}
+          </button>
+        )
+      })}
     </div>
   )
 }

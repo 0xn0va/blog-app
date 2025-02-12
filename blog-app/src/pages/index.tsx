@@ -1,16 +1,24 @@
 import { GetStaticProps } from "next"
-import Home from "@/components/Home"
+import HomeView from "@/components/views/Home"
 import { Post } from "@/types/types"
-import { generateHashtags } from "@/utils/generateHashtags"
+import { generatePostTags } from "@/utils/generatePostTags"
+import Head from "next/head"
 
-type PostWithHashtags = Post & { hashtags: string[] }
+type PostWithTags = Post & { tags: string[] }
 
 type Props = {
-  posts: PostWithHashtags[]
+  posts: PostWithTags[]
 }
 
-export default function Index({ posts }: Props) {
-  return <Home posts={posts} />
+export default function HomePage({ posts }: Props) {
+  return (
+    <>
+      <Head>
+        <title>My Blog Name</title>
+      </Head>
+      <HomeView posts={posts} />
+    </>
+  )
 }
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -23,14 +31,14 @@ export const getStaticProps: GetStaticProps = async () => {
 
     const posts: Post[] = await res.json()
 
-    const postsWithHashtags = posts.map((post) => ({
+    const postsWithTags = posts.map((post) => ({
       ...post,
-      hashtags: generateHashtags(),
+      tags: generatePostTags(),
     }))
 
     return {
       props: {
-        posts: postsWithHashtags,
+        posts: postsWithTags,
       },
     }
   } catch (error) {

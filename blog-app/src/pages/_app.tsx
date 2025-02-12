@@ -1,17 +1,11 @@
 import "@/styles/globals.css"
 import type { AppProps } from "next/app"
-import Navbar from "@/components/Navbar"
-import SectionWrapper from "@/components/SectionWrapper"
-import Footer from "@/components/Footer"
+import Layout from "@/components/layout/Layout"
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <>
-      <Navbar />
-      <SectionWrapper>
-        <Component {...pageProps} />
-      </SectionWrapper>
-      <Footer />
-    </>
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
   )
 }

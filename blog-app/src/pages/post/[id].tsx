@@ -1,22 +1,20 @@
 import { GetStaticProps, GetStaticPaths } from "next"
 import { Post } from "@/types/types"
+import PostView from "@/components/views/Post"
+import Head from "next/head"
 
 type PostProps = {
   post: Post
 }
 
-export default function PostDetails({ post }: PostProps) {
+export default function PostPage({ post }: PostProps) {
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold">{post.title}</h1>
-      <p>
-        <strong>Post ID:</strong> {post.id}
-      </p>
-      <p>
-        <strong>Author ID:</strong> {post.userId}
-      </p>
-      <p>{post.body}</p>
-    </div>
+    <>
+      <Head>
+        <title>Post {post.id} | My Blog Name</title>
+      </Head>
+      <PostView post={post} />
+    </>
   )
 }
 

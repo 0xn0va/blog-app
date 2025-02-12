@@ -65,3 +65,6 @@ Utility Functions: Utility functions like `generatePostTags` are used to process
 - Type definitions in `types.ts`;
 - Utility functions in `generatePostTags.ts`;
 - `Layout` component for wrapping sections with consistent styling.
+- Project deployed on Vercel.
+
+You can acess the live version of this project here: https://blog-app-brp99s-projects.vercel.app/

@@ -1,6 +1,5 @@
 import Link from "next/link"
 import { Post } from "@/types/types"
-import { MoveRight } from "lucide-react"
 
 type Props = {
   post: Post & { tags: string[] }

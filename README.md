@@ -57,6 +57,29 @@ Reusable Components: Component Layout are used to ensure consistent styling and 
 
 Utility Functions: Utility functions like `generatePostTags` are used to process and display data efficiently.
 
+#### Changes for IPFS Deployment:
+
+To make the blog application compatible with IPFS, I made the following modifications to the next.config.ts file:
+
+```
+const nextConfig: NextConfig = {
+  output: "export", // Export as a static site
+  distDir: "out", // Ensure generated files are saved in the "out" folder - important for IPFS
+  images: {
+    unoptimized: true, // Next.js normally optimizes images dynamically - this does not work on IPFS
+  },
+  reactStrictMode: true,
+};
+
+```
+
+- Static Export: The application is configured to export the site as a static site, which can be hosted on IPFS. This removes the need for Server-Side Rendering (SSR) or API routes, making it fully static;
+
+- The output: "export" option tells Next.js to create a static version of the application, and the distDir: "out" ensures that the exported files are stored in the out/ directory, ready to be uploaded to IPFS;
+
+- To deploy on IPFS I run `npm run build` to generate static files;
+- The content of the `out/` directory can be uploaded to IPFS.
+
 ### Additional information
 
 - Custom \_app.tsx for global layout;

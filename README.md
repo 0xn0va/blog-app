@@ -1,6 +1,6 @@
 # Blog Application
 
-This is a blog application built with **Next.js**, **TypeScript**, and **Tailwind CSS**. The app fetches blog posts from the [JSONPlaceholder API](https://jsonplaceholder.typicode.com/posts) and displays them in a responsive layout.
+This is a blog application built with **Next.js**, **TypeScript**, and **Tailwind CSS**. The app fetches blog posts from the [JSONPlaceholder API](https://jsonplaceholder.typicode.com/posts) and displays them in a responsive layout. In the end I make blog application compatible with IPFS. 
 
 ## Features
 

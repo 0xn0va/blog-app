@@ -1,6 +1,8 @@
 # Blog Application
 
-This is a blog application built with **Next.js**, **TypeScript**, and **Tailwind CSS**. The app fetches blog posts from the [JSONPlaceholder API](https://jsonplaceholder.typicode.com/posts) and displays them in a responsive layout. In the end I make blog application compatible with IPFS. 
+Create a blog application compatible with IPFS.
+
+This is a blog application built with **Next.js**, **TypeScript**, and **Tailwind CSS**. The app fetches blog posts from the [JSONPlaceholder API](https://jsonplaceholder.typicode.com/posts) and displays them in a responsive layout. 
 
 ## Features
 
@@ -31,29 +33,13 @@ This is a blog application built with **Next.js**, **TypeScript**, and **Tailwin
 - Tailwind CSS;
 - JSONPlaceholder API
 
-## Project setup
-
-1. Clone the repository: `https://github.com/BRp99/blog-app.git`
-2. Navigate to the project directory: `cd blog-app`
-3. Install dependencies:
-   `npm install`
-
-4. Run the development server:
-   `npm run dev`
-
-## Approach and Advanced Features
-
-### Approach
-
-The application is built using Next.js framework for static site generation (SSG). TypeScript is used for type safety, and Tailwind CSS is used for styling. The JSONPlaceholder API is used to fetch blog post data.
-
 ### Advanced features
 
 SSG: The homepage and post details pages are statically generated using getStaticProps and getStaticPaths;
 
-Responsive Design: The application is designed to be fully responsive using Tailwind CSS;
+Responsive design: The application is designed to be fully responsive using Tailwind CSS;
 
-Reusable Components: Component Layout are used to ensure consistent styling and structure across the application;
+Reusable components: Component Layout are used to ensure consistent styling and structure across the application;
 
 Utility Functions: `generatePostTags` are used to process and display data.
 
@@ -82,7 +68,6 @@ const nextConfig: NextConfig = {
   `https://ipfs.io/ipns/k51qzi5uqu5dl6v3fqwfql562786nhzl5lrdsnixg4qarfu0a176ry936foj0q`
 
 ![localhost-url](https://github.com/user-attachments/assets/9a0aab30-c5a5-4c86-852d-035b042ad84f)
-
 
 ### Additional information
 
